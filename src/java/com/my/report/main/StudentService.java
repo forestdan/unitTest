@@ -18,6 +18,6 @@ public class StudentService {
     }
 
     public void orderByGrade(List<Student> studentList) {
-
+        studentList.sort(Comparator.comparingInt(Student::getGrade).reversed());
     }
 }
