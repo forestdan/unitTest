@@ -4,13 +4,11 @@ import com.my.report.entity.Student;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class StudentService {
 
-    public List<Student> orderByAge(List<Student> studentList) {
+    public void orderByAge(List<Student> studentList) {
         studentList.sort(Comparator.comparingInt(Student::getAge));
-        return studentList;
     }
 
     public long countBetweenGrade(List<Student> studentList, int start, int end) {
