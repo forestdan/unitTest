@@ -16,4 +16,8 @@ public class StudentService {
                 .filter(o1 -> o1.getGrade() >= start && o1.getGrade() <= end)
                 .count();
     }
+
+    public void orderByGrade(List<Student> studentList) {
+
+    }
 }
