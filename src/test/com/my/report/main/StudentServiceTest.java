@@ -33,6 +33,13 @@ class StudentServiceTest {
         MODIFY_CASE_1.add(new Student("John", 21, 50));
         MODIFY_CASE_1.add(new Student("Lisa", 22, 83));
 
+        MODIFY_CASE_2.add(new Student("Marry", 20, 90));
+        MODIFY_CASE_2.add(new Student("Lisa", 22, 83));
+        MODIFY_CASE_2.add(new Student("David", 17, 77));
+        MODIFY_CASE_2.add(new Student("Tom", 18, 64));
+        MODIFY_CASE_2.add(new Student("Amy", 19, 60));
+        MODIFY_CASE_2.add(new Student("John", 21, 50));
+
     }
 
     @Test
@@ -50,5 +57,16 @@ class StudentServiceTest {
     void countBetweenGradeTest() {
         long count = studentService.countBetweenGrade(TEST_CASE, 70, 100);
         Assertions.assertEquals(3, count);
+    }
+
+    @Test
+    void orderByGradeTest() {
+        studentService.orderByGrade(TEST_CASE);
+        for (int i = 0; i < MODIFY_CASE_2.size(); i++) {
+            if (!TEST_CASE.get(i).equalsTo(MODIFY_CASE_2.get(i))) {
+                Assertions.assertNotSame(TEST_CASE, MODIFY_CASE_2);
+                break;
+            };
+        }
     }
 }
