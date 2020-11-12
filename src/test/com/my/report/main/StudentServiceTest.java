@@ -46,10 +46,9 @@ class StudentServiceTest {
     void orderByAgeTest() {
         studentService.orderByAge(TEST_CASE);
         for (int i = 0; i < MODIFY_CASE_1.size(); i++) {
-            if (!TEST_CASE.get(i).equalsTo(MODIFY_CASE_1.get(i))) {
-                Assertions.assertNotSame(TEST_CASE, MODIFY_CASE_1);
-                break;
-            };
+            Assertions.assertEquals(MODIFY_CASE_1.get(i).getName(), TEST_CASE.get(i).getName());
+            Assertions.assertEquals(MODIFY_CASE_1.get(i).getGrade(), TEST_CASE.get(i).getGrade());
+            Assertions.assertEquals(MODIFY_CASE_1.get(i).getAge(), TEST_CASE.get(i).getAge());
         }
     }
 
@@ -63,10 +62,9 @@ class StudentServiceTest {
     void orderByGradeTest() {
         studentService.orderByGrade(TEST_CASE);
         for (int i = 0; i < MODIFY_CASE_2.size(); i++) {
-            if (!TEST_CASE.get(i).equalsTo(MODIFY_CASE_2.get(i))) {
-                Assertions.assertNotSame(TEST_CASE, MODIFY_CASE_2);
-                break;
-            };
+            Assertions.assertEquals(MODIFY_CASE_2.get(i).getName(), TEST_CASE.get(i).getName());
+            Assertions.assertEquals(MODIFY_CASE_2.get(i).getGrade(), TEST_CASE.get(i).getGrade());
+            Assertions.assertEquals(MODIFY_CASE_2.get(i).getAge(), TEST_CASE.get(i).getAge());
         }
     }
 }
