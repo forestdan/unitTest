@@ -19,6 +19,16 @@ public class Student {
                 && this.age == a.getAge()
                 && this.grade == a.getGrade());
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", grade=" + grade +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
